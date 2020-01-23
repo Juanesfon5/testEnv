@@ -1,24 +1,23 @@
 import { Schema, model } from 'mongoose';
 
-const avoSchema = new Schema(
+const plcSchema = new Schema(
   {
-    avo_num: {
+    name: {
       type: String,
       unique: true,
       required: true,
       trim: true,
-      min: 3,
-      max: 28
+      min: 4
     },
-    sequences: [
+    plcIO: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Sequence'
+        ref: 'PLCI/O'
       }
     ],
-    liveState: {
+    workStation: {
       type: Schema.Types.ObjectId,
-      ref: 'State'
+      ref: 'Workstation'
     }
   },
   {
@@ -26,4 +25,4 @@ const avoSchema = new Schema(
   }
 );
 
-export default model('AVO', avoSchema);
+export default model('PLC', plcSchema);
