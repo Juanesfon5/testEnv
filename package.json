@@ -1,0 +1,48 @@
+{
+  "name": "leanda-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "clean": "rimraf dist",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.js --exec babel-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.cc-asp.fraunhofer.de:sensorkoffer/leanda-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.8.3",
+    "cors": "^2.8.5",
+    "date-fns": "^2.9.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fs-extra": "^8.1.0",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.8.9",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/node": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-node": "^4.0.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0"
+  }
+}
