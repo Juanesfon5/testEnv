@@ -12,12 +12,12 @@ const plcSchema = new Schema(
     plcIO: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'PLCI/O'
+        ref: 'PLCIO'
       }
     ],
     workStation: {
       type: Schema.Types.ObjectId,
-      ref: 'Workstation'
+      ref: 'WorkStation'
     }
   },
   {
