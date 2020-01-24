@@ -11,4 +11,6 @@ router
   .post(multer.single('image'), createPicture)
   .get(getPictures);
 
+router.post('/pictures/:id');
+
 export default router;

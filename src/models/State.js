@@ -5,9 +5,9 @@ const stateSchema = new Schema(
     name: {
       type: String,
       unique: true,
-      required: true,
+      required: [true, 'The name of the state is missing'],
       trim: true,
-      min: 3
+      min: [3, 'The name of the state must have at least 3 characters']
     },
     inUse: {
       type: Boolean,
@@ -19,6 +19,10 @@ const stateSchema = new Schema(
         ref: 'WorkStation'
       }
     ]
+    /* stateGroup : {
+      type: Schema.Types.ObjectId,
+      ref: 'StateGroup' 
+    } */
   },
   {
     timestamps: true

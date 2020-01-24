@@ -2,13 +2,13 @@ import { Schema, model } from 'mongoose';
 
 const avoSchema = new Schema(
   {
-    avo_num: {
+    avoNum: {
       type: String,
       unique: true,
-      required: true,
+      required: [true, 'AVO number is missing'],
       trim: true,
-      min: 3,
-      max: 28
+      min: [3, 'AVO number must be at least 3 characters long'],
+      max: [28, 'AVO number must have less than 28 characters']
     },
     sequences: [
       {

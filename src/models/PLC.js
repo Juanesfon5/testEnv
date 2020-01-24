@@ -5,9 +5,9 @@ const plcSchema = new Schema(
     name: {
       type: String,
       unique: true,
-      required: true,
+      required: [true, 'The name of the PLC is missing'],
       trim: true,
-      min: 4
+      min: [4, 'The name of the PLC must be at least 4 charaacters long']
     },
     plcIO: [
       {

@@ -3,11 +3,11 @@ import { Schema, model } from 'mongoose';
 const sequenceSchema = new Schema({
   startTS: {
     type: Date,
-    required: true
+    required: [true, 'The initial time of the sequence is missing']
   },
   stopTS: {
     type: Date,
-    required: true
+    required: [true, 'The final time of the sequence is missing']
   },
   durationMin: {
     type: Number

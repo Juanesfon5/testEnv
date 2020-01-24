@@ -5,9 +5,9 @@ const stateGroupSchema = new Schema(
     name: {
       type: String,
       unique: true,
-      required: true,
+      required: [true, 'The name of the state is missing'],
       trim: true,
-      min: 3
+      min: [3, 'The name of the state group must have at least 3 characters']
     },
     states: [
       {

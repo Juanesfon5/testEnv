@@ -1,31 +1,35 @@
 import { Schema, model } from 'mongoose';
 
+// const getTime = date => date.toLocaleTimeString('en-US');
+
 const shiftSchema = new Schema(
   {
     name: {
       type: String,
-      required: true,
+      required: [true, 'The name of the shift is missing'],
       trim: true,
-      min: 3
+      min: [3, 'The name of the shift must have at least 3 characters']
     },
     startTime: {
       type: Date,
-      required: true
+      required: [true, 'The starting time of the shift is missing']
+      // get: getTime
     },
     stopTime: {
       type: Date,
-      required: true
+      required: [true, 'The ending time of the shift is missing']
+      // get: getTime
     },
     daysOfWeek: {
       type: [String],
       enum: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
       default: ['Mon'],
-      required: true
+      required: [true, 'No weekdays for the shift']
     },
     workStation: {
       type: Schema.Types.ObjectId,
       ref: 'WorkStation',
-      required: true
+      required: [true, 'Shift not assigned to a work station']
     }
   },
   {
